@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 import time
 options = Options()
-#options.headless = True
+options.headless = True
 #driver = webdriver.Firefox(options=options, executable_path=r'E:\Downloads\geckodriver.exe')
 driver = webdriver.Firefox(options=options, executable_path=r'/usr/bin/geckodriver')
 driver.get("REFERRAL")
