@@ -1,3 +1,3 @@
 #!/bin/bash
-chmod +x /$REPONAME/start.sh
-supervisord -c /$REPONAME/supervisord.conf
+chmod +x /$REPONAME/scriptplusconf/start.sh
+supervisord -c /$REPONAME/scriptplusconf/supervisord.conf
