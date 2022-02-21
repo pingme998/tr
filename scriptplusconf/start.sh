@@ -42,7 +42,7 @@ cat /$REPONAME/raw/py1 |sed "s|MAILNAME|$MAILNAME|g" |sed "s|REFERRAL|$REFERRAL|
 
 cat /$REPONAME/gen/run1.py >>/var/www/html/dev0.html
 
-python3 /$REPONAME/gen/run1.py >>/var/www/html/dev.html
+python3 /$REPONAME/gen/run1.py
 
 #getmail (gettingmails)
 
@@ -51,7 +51,7 @@ python3 /$REPONAME/gen/run1.py >>/var/www/html/dev.html
 curl "https://temporarymail.com/view/?i=$GETMAILID&width=822"   -H 'authority: temporarymail.com'   -H 'upgrade-insecure-requests: 1'   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36'   -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'   -H 'sec-gpc: 1'   -H 'sec-fetch-site: same-origin'   -H 'sec-fetch-mode: navigate'   -H 'sec-fetch-dest: iframe'   -H 'referer: https://temporarymail.com/'   -H 'accept-language: en-US,en;q=0.9'   --compressed >/$REPONAME/raw/file.html
 cat /$REPONAME/raw/file.html|sed 's|"|\n|g;s|hxxp|http|g' |grep 'hubspotlinks'|head -1 >/$REPONAME/gen/randomurl
 
-sleep 20
+sleep 30
 
 RANDTURL=$(cat /$REPONAME/gen/randomurl)
 echo "Randurl=$RANDTURL" >>/var/www/html/dev.html
@@ -59,6 +59,6 @@ echo "Randurl=$RANDTURL" >>/var/www/html/dev.html
 #sleep 
 #SCALING RAW PY 2
 cat /$REPONAME/raw/py2 |sed "s|RANDTURL|$RANDTURL|g" >/$REPONAME/gen/run2.py
-python3 /$REPONAME/gen/run2.py >>/var/www/html/dev.html
+python3 /$REPONAME/gen/run2.py
 pkill firefox
 pkill geckodriver
