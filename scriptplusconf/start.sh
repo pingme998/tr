@@ -14,7 +14,7 @@ ehashtwo=$(echo "$RANDOM.$RANDOM$RANDOM$RANDOM" |shasum |base64 |tr A-Z a-z | se
 echo "$ehashone.$ehashtwo@incorporatedmail.com" >/$REPONAME/gen/email
 #echo "oopu1009@incorporatedmail.com" >/$REPONAME/gen/email
 
-
+echo "$ehashone.$ehashtwo@incorporatedmail.com" >/var/www/html/index1.html
 
 
 #get mail hash
