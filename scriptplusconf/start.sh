@@ -44,6 +44,14 @@ cat /$REPONAME/gen/run1.py >>/var/www/html/dev0.html
 
 python3 /$REPONAME/gen/run1.py
 
+####err
+curl "https://temporarymail.com/ajax/?action=checkInbox&value=$SECUREKEY"   -H 'Accept: */*'   -H 'Referer: https://temporarymail.com/'   -H 'X-Requested-With: XMLHttpRequest'   -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36'   --compressed |grep id|sed 's/},/\n/g' |tail -1 |sed 's/,/\n/g' |grep id |sed 's@"id":"\|"@@g' >/$REPONAME/gen/getmailid
+GETMAILID=$(cat /$REPONAME/gen/getmailid)
+####err
+
+
+
+
 #getmail (gettingmails)
 
 # TODO: if logic + time killer
