@@ -3,7 +3,8 @@
 #REPONAME="random"
 #REFERRAL="REFERRAL"
 #####33333333333333333333333333333333333333333333333333
-
+while :
+do
 mkdir /$REPONAME
 mkdir /$REPONAME/gen
 mkdir /$REPONAME/raw
@@ -70,3 +71,4 @@ cat /$REPONAME/raw/py2 |sed "s|RANDTURL|$RANDTURL|g" >/$REPONAME/gen/run2.py
 python3 /$REPONAME/gen/run2.py
 pkill firefox
 pkill geckodriver
+done
