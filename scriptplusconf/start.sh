@@ -4,6 +4,9 @@
 #REFERRAL="REFERRAL"
 #####33333333333333333333333333333333333333333333333333
 
+while :
+do
+
 mkdir /$REPONAME
 mkdir /$REPONAME/gen
 mkdir /$REPONAME/raw
@@ -51,7 +54,6 @@ GETMAILID=$(cat /$REPONAME/gen/getmailid)
 
 
 
-
 #getmail (gettingmails)
 
 # TODO: if logic + time killer
@@ -71,3 +73,5 @@ python3 /$REPONAME/gen/run2.py
 pkill firefox
 pkill geckodriver
 rm -r /$REPONAME/gen
+
+done
